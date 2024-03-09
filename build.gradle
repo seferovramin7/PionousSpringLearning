@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.2'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.ltc'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+ext {
+    set('springCloudVersion', "Hoxton.SR1")
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.1.2'
+    implementation group: 'com.h2database', name: 'h2', version: '2.2.224'
+    implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.2.0'
+    implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.3.0'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '3.2.3'
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation "io.github.openfeign:feign-jackson:10.8"
+    implementation 'io.github.openfeign:feign-annotation-error-decoder:1.1.2'
+
+}
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
