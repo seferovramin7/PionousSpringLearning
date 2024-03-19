@@ -1,11 +1,9 @@
 package com.ltc.pionousspringlearning.controller;
 
 import com.ltc.pionousspringlearning.dto.CarDto;
-import com.ltc.pionousspringlearning.dto.CopartCarDto;
 import com.ltc.pionousspringlearning.service.CarService;
 import com.ltc.pionousspringlearning.service.EmailService;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
@@ -32,13 +30,10 @@ public class CarController {
     private final EmailService emailService;
 
 
-//
-//    @PostMapping("email")
-//    public String sendEmail(@RequestBody EmailDto emailDto, @RequestBody MultipartFile file)
-//            throws MessagingException, IOException {
-//        emailService.sendEmail(emailDto);
-//        return "Email Sent Successfully";
-//    }
+    @GetMapping("calc")
+    public int calc(@RequestParam int a, int b) {
+        return carService.calc(a, b);
+    }
 
 
     @PostMapping(path = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)

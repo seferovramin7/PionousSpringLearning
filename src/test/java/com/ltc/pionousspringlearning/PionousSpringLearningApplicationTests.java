@@ -1,7 +1,7 @@
 package com.ltc.pionousspringlearning;
 
 import com.ltc.pionousspringlearning.controller.CarController;
-import com.ltc.pionousspringlearning.service.CarService;
+import com.ltc.pionousspringlearning.service.CarServiceTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -15,7 +15,7 @@ class PionousSpringLearningApplicationTests {
     CarController controller;
 
     @Mock
-    CarService service;
+    CarServiceTest service;
 
     @Test
     void contextLoads() {

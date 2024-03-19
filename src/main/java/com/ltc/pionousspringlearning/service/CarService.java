@@ -2,8 +2,6 @@ package com.ltc.pionousspringlearning.service;
 
 
 import com.ltc.pionousspringlearning.dto.CarDto;
-import com.ltc.pionousspringlearning.dto.CopartCarDto;
-import com.ltc.pionousspringlearning.dto.Launch;
 import com.ltc.pionousspringlearning.entity.Car;
 import com.ltc.pionousspringlearning.repository.CarRepository;
 import java.util.ArrayList;
@@ -31,12 +29,14 @@ public class CarService {
     private final ScheduledService scheduledService;
 
 
-
-
     public ResponseEntity<CarDto> deleteCar(String model) {
         Car car = carRepository.deleteCarByModel(model);
 
         return ResponseEntity.ok(convertToDto(car));
+    }
+
+    public int calc(int a, int b) {
+        return a + b;
     }
 
 
