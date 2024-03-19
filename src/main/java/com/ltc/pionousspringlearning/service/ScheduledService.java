@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class ScheduledService {
 
 
-    @Scheduled(fixedRate = 1000)
+//    @Scheduled(fixedRate = 1000)
     void write() {
         System.out.println("Hello World ! " + LocalDateTime.now());
     }

@@ -1,8 +1,6 @@
 package com.ltc.pionousspringlearning.service;
 
 
-import com.ltc.pionousspringlearning.config.feign.CopartApiClient;
-import com.ltc.pionousspringlearning.config.feign.RocketClient;
 import com.ltc.pionousspringlearning.dto.CarDto;
 import com.ltc.pionousspringlearning.dto.CopartCarDto;
 import com.ltc.pionousspringlearning.dto.Launch;
@@ -33,18 +31,6 @@ public class CarService {
     private final ScheduledService scheduledService;
 
 
-    private final RocketClient rocketClient;
-
-    private final CopartApiClient copartApiClient;
-
-    public ArrayList<CopartCarDto> getCopartCars() {
-        return copartApiClient.getCars();
-    }
-
-
-    public ArrayList<Launch> getLaunches() {
-        return rocketClient.getLaunches();
-    }
 
 
     public ResponseEntity<CarDto> deleteCar(String model) {

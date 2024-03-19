@@ -2,10 +2,8 @@ package com.ltc.pionousspringlearning.controller;
 
 import com.ltc.pionousspringlearning.dto.CarDto;
 import com.ltc.pionousspringlearning.dto.CopartCarDto;
-import com.ltc.pionousspringlearning.dto.Launch;
 import com.ltc.pionousspringlearning.service.CarService;
 import com.ltc.pionousspringlearning.service.EmailService;
-import jakarta.mail.MessagingException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,10 +32,6 @@ public class CarController {
     private final EmailService emailService;
 
 
-    @GetMapping("hello")
-    public ArrayList<CopartCarDto> carWelcome() throws MessagingException, IOException {
-        return carService.getCopartCars();
-    }
 //
 //    @PostMapping("email")
 //    public String sendEmail(@RequestBody EmailDto emailDto, @RequestBody MultipartFile file)
